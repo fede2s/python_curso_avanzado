@@ -82,10 +82,17 @@ class ControladorDeTablas:
                     'No se pudo insertar el registro'
                 alerta(e)
 
+        @registrar_en_txt
         def alerta(e):
             e.control.page.overlay.append(self.vista.alerta_evento)
             self.vista.alerta_evento.open = True
             e.control.page.update()
+            mensaje_txt = self.vista.alerta_evento.title
+            datos_txt = ''
+            for campo in self.vista.registro_modificable.controls:
+                datos_txt += ';' + str(campo.value)
+            datos_txt = datos_txt[1:]
+            return mensaje_txt + '\t' + datos_txt + '\n'
 
         def baja(e):
             # selecciono la primera celda del registro

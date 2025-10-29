@@ -1,7 +1,7 @@
 def registrar_en_txt(funcion):
     def envoltura(*args):
         txt_registro = funcion(*args)
-        archivo = open('registro.txt','w')
+        archivo = open('registro.txt','a')
         archivo.write(txt_registro)
         archivo.close()
         return txt_registro
