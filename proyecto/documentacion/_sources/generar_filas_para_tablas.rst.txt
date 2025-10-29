@@ -1,0 +1,7 @@
+generar\_filas\_para\_tablas module
+===================================
+
+.. automodule:: generar_filas_para_tablas
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+cls\_fila\_grafica module
+=========================
+
+.. automodule:: cls_fila_grafica
+   :members:
+   :show-inheritance:
+   :undoc-members:

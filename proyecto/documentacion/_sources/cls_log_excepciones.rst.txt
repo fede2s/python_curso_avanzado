@@ -1,0 +1,7 @@
+cls\_log\_excepciones module
+============================
+
+.. automodule:: cls_log_excepciones
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,7 @@
+cls\_columna\_grafica module
+============================
+
+.. automodule:: cls_columna_grafica
+   :members:
+   :show-inheritance:
+   :undoc-members:

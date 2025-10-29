@@ -1,0 +1,7 @@
+alerta\_evento module
+=====================
+
+.. automodule:: alerta_evento
+   :members:
+   :show-inheritance:
+   :undoc-members:

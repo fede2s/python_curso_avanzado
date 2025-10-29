@@ -1,0 +1,7 @@
+regex\_validar\_clave module
+============================
+
+.. automodule:: regex_validar_clave
+   :members:
+   :show-inheritance:
+   :undoc-members:

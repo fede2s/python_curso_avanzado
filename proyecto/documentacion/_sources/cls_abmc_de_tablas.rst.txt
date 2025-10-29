@@ -1,0 +1,7 @@
+cls\_abmc\_de\_tablas module
+============================
+
+.. automodule:: cls_abmc_de_tablas
+   :members:
+   :show-inheritance:
+   :undoc-members:

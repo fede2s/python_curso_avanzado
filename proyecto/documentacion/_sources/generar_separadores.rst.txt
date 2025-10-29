@@ -1,0 +1,7 @@
+generar\_separadores module
+===========================
+
+.. automodule:: generar_separadores
+   :members:
+   :show-inheritance:
+   :undoc-members:

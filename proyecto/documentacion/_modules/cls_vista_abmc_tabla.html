@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cls_vista_abmc_tabla &mdash; entregaIntermedia 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            entregaIntermedia
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_controlador.html">Controlador</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_vista.html">Vista</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modelo.html">Modelo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">entregaIntermedia</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">cls_vista_abmc_tabla</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cls_vista_abmc_tabla</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">flet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ft</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vista.cls_boton</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vista.cls_fila_grafica</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vista.cls_columna_grafica</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vista.cls_generador_obj_flet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">obj_flet</span>
+
+
+<div class="viewcode-block" id="VistaABMCDeTablas">
+<a class="viewcode-back" href="../cls_vista_abmc_tabla.html#cls_vista_abmc_tabla.VistaABMCDeTablas">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">VistaABMCDeTablas</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Atributos de instancia</span>
+<span class="sd">    ======================</span>
+
+<span class="sd">    - **page**: página de Flet.</span>
+<span class="sd">    - **titulos_columnas**: muestra qué representa cada columna.</span>
+<span class="sd">    - **datos**: contiene la información a graficar en una tabla de</span>
+<span class="sd">      Flet.</span>
+<span class="sd">    - **botones**: fila de botones de Flet con funciones **ABM** que</span>
+<span class="sd">      provienen del controlador (y este a su vez del modelo).</span>
+<span class="sd">    - **registro_modificable**: utilizado para funciones de **ABM**.</span>
+<span class="sd">    - **tabla**: la tabla a graficar con Flet y con los datos que</span>
+<span class="sd">      provee el controlador.</span>
+<span class="sd">    - **separador**: separa la parte superior (botones y registro</span>
+<span class="sd">      modificable) de la parte inferior (tabla).</span>
+<span class="sd">    - **alerta_evento**: alerta cuando se ejecuta una función **ABM** o</span>
+<span class="sd">      cuando ocurre un error.</span>
+
+<span class="sd">    Métodos de instancia públicos</span>
+<span class="sd">    =============================</span>
+
+<span class="sd">    - **actualizar_tabla(self)**: actualiza los datos de la tabla.</span>
+<span class="sd">    - **inicializar_vista(self, alta, baja, modificacion)**: inicializa</span>
+<span class="sd">      la vista asignando las funciones de **ABM**.</span>
+
+<span class="sd">    Métodos de instancia privados</span>
+<span class="sd">    =============================</span>
+
+<span class="sd">    - **__inicializar_botones(self)**: inicializa los botones de la</span>
+<span class="sd">      vista.</span>
+<span class="sd">    - **__inicializar_registro_modificable(self)**: inicializa el</span>
+<span class="sd">      registro modificable.</span>
+<span class="sd">    - **__inicializar_tabla(self)**: inicializa la tabla de la vista.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">nombre_tabla</span><span class="p">):</span>
+        <span class="c1"># configuración</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="n">page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ABMC de tabla </span><span class="si">{</span><span class="n">nombre_tabla</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">scroll</span> <span class="o">=</span> <span class="s2">&quot;always&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+        <span class="c1"># para funcionamiento</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titulos_columnas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datos</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Objetos visibles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">botones</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">registro_modificable</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tabla</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">separador</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alerta_evento</span> <span class="o">=</span> <span class="n">ft</span><span class="o">.</span><span class="n">AlertDialog</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">ft</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__inicializar_tabla</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        genero una tabla de forma dinamica con la tabla que estoy</span>
+<span class="sd">        consultando y con la vista que tengo para tablas</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tabla</span> <span class="o">=</span> <span class="n">obj_flet</span><span class="o">.</span><span class="n">GeneradorObjetosFlet</span><span class="o">.</span><span class="n">generar_tabla</span><span class="p">(</span>
+            <span class="n">columnas_txt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">titulos_columnas</span><span class="p">,</span>
+            <span class="n">filas_lista_txt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">datos</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="VistaABMCDeTablas.actualizar_tabla">
+<a class="viewcode-back" href="../cls_vista_abmc_tabla.html#cls_vista_abmc_tabla.VistaABMCDeTablas.actualizar_tabla">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">actualizar_tabla</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Actualiza los datos en la tabla&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tabla</span><span class="o">.</span><span class="n">rows</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tabla</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> \
+            <span class="n">obj_flet</span><span class="o">.</span><span class="n">GeneradorObjetosFlet</span><span class="o">.</span><span class="n">generar_filas_de_tabla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datos</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__inicializar_botones</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">funcion_alta</span><span class="p">,</span>
+            <span class="n">funcion_baja</span><span class="p">,</span>
+            <span class="n">funcion_modificacion</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Botones: primero creo boton alta, baja, modificacion</span>
+<span class="sd">        Después los junto en una fila usando la funcion generar filas</span>
+<span class="sd">        y pasandole una lista de los botones</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">boton_alta</span> <span class="o">=</span> <span class="n">vista</span><span class="o">.</span><span class="n">cls_boton</span><span class="o">.</span><span class="n">Boton</span><span class="p">(</span><span class="s2">&quot;Alta&quot;</span><span class="p">,</span> <span class="n">funcion_alta</span><span class="p">)</span>
+        <span class="n">boton_baja</span> <span class="o">=</span> <span class="n">vista</span><span class="o">.</span><span class="n">cls_boton</span><span class="o">.</span><span class="n">Boton</span><span class="p">(</span><span class="s2">&quot;Baja&quot;</span><span class="p">,</span> <span class="n">funcion_baja</span><span class="p">)</span>
+        <span class="n">boton_modificacion</span> <span class="o">=</span> <span class="n">vista</span><span class="o">.</span><span class="n">cls_boton</span><span class="o">.</span><span class="n">Boton</span><span class="p">(</span>
+            <span class="s2">&quot;Modificacion&quot;</span><span class="p">,</span>
+            <span class="n">funcion_modificacion</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">botones</span> <span class="o">=</span> <span class="n">vista</span><span class="o">.</span><span class="n">cls_fila_grafica</span><span class="o">.</span><span class="n">FilaGrafica</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">boton_alta</span><span class="p">,</span> <span class="n">boton_baja</span><span class="p">,</span> <span class="n">boton_modificacion</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__inicializar_registro_modificable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Celdas modificables / Registro modificable:</span>
+<span class="sd">        Agrego elementos a la lista REGISTRO que a la vez es</span>
+<span class="sd">        un atributo de la clase abmc_de_tablas. Ese nuevo</span>
+<span class="sd">        elemento es un elemento de Flet de tipo TextField</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">registro_modificable</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">campo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">titulos_columnas</span><span class="p">:</span>
+            <span class="n">registro_modificable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">ft</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="n">campo</span><span class="p">,</span>
+                    <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">))</span>
+        <span class="n">lista_celdas_modificables</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">campo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">titulos_columnas</span><span class="p">:</span>
+            <span class="n">lista_celdas_modificables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">ft</span><span class="o">.</span><span class="n">DataCell</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">ft</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">campo</span><span class="p">),)</span>
+                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">registro_modificable</span> <span class="o">=</span> \
+            <span class="n">vista</span><span class="o">.</span><span class="n">cls_fila_grafica</span><span class="o">.</span><span class="n">FilaGrafica</span><span class="p">(</span><span class="n">registro_modificable</span><span class="p">)</span>
+
+<div class="viewcode-block" id="VistaABMCDeTablas.inicializar_vista">
+<a class="viewcode-back" href="../cls_vista_abmc_tabla.html#cls_vista_abmc_tabla.VistaABMCDeTablas.inicializar_vista">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inicializar_vista</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">alta</span><span class="p">,</span>
+            <span class="n">baja</span><span class="p">,</span>
+            <span class="n">modificacion</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializo los distintos objetos flet que componen la vista</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__inicializar_botones</span><span class="p">(</span><span class="n">alta</span><span class="p">,</span> <span class="n">baja</span><span class="p">,</span> <span class="n">modificacion</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__inicializar_registro_modificable</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__inicializar_tabla</span><span class="p">()</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Formulario:</span>
+<span class="sd">        es una columnas donde 1era fila va la fila de botones</span>
+<span class="sd">        en segunda fila va una fila de celdas modificables</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formulario</span> <span class="o">=</span> <span class="n">vista</span><span class="o">.</span><span class="n">cls_columna_grafica</span><span class="o">.</span><span class="n">ColumnaGrafica</span><span class="p">([</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">botones</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">registro_modificable</span>
+        <span class="p">])</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Genero un separador que separa con una línea móvil al</span>
+<span class="sd">        formulario de la tabla.</span>
+<span class="sd">        Finalmente el formulario que contiene todos los objetos</span>
+<span class="sd">        a la página.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">separador</span> <span class="o">=</span> <span class="n">obj_flet</span><span class="o">.</span><span class="n">GeneradorObjetosFlet</span><span class="o">.</span><span class="n">generar_separador</span><span class="p">(</span>
+            <span class="n">formulario</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tabla</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">separador</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Fede.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

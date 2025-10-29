@@ -1,0 +1,4 @@
+Se ha dado un error: archivo1.txt 7 2025-08-30 06:47:55.819645
+Se ha dado un error: Archivo: regex_validar_clave.py	 ID ingresado: aaa	 timestamp 2025-08-30 06:48:33.425366
+Se ha dado un error: Archivo: regex_validar_clave.py	 ID ingresado: aaa	 timestamp 2025-08-30 06:53:04.648417
+Se ha dado un error: Archivo: regex_validar_clave.py	 ID ingresado: aa	 timestamp 2025-08-31 19:10:32.031525

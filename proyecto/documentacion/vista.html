@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vista package &mdash; entregaIntermedia 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="modelo package" href="modelo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            entregaIntermedia
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="controlador.html">controlador package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelo.html">modelo package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vista package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista.cls_boton">vista.cls_boton module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vista.cls_boton.Boton"><code class="docutils literal notranslate"><span class="pre">Boton</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista.cls_columna_grafica">vista.cls_columna_grafica module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vista.cls_columna_grafica.ColumnaGrafica"><code class="docutils literal notranslate"><span class="pre">ColumnaGrafica</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista.cls_fila_grafica">vista.cls_fila_grafica module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vista.cls_fila_grafica.FilaGrafica"><code class="docutils literal notranslate"><span class="pre">FilaGrafica</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista.cls_generador_obj_flet">vista.cls_generador_obj_flet module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet"><code class="docutils literal notranslate"><span class="pre">GeneradorObjetosFlet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_alerta"><code class="docutils literal notranslate"><span class="pre">GeneradorObjetosFlet.generar_alerta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_filas_de_tabla"><code class="docutils literal notranslate"><span class="pre">GeneradorObjetosFlet.generar_filas_de_tabla()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_separador"><code class="docutils literal notranslate"><span class="pre">GeneradorObjetosFlet.generar_separador()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_tabla"><code class="docutils literal notranslate"><span class="pre">GeneradorObjetosFlet.generar_tabla()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista.cls_vista_abmc_tabla">vista.cls_vista_abmc_tabla module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas"><code class="docutils literal notranslate"><span class="pre">VistaABMCDeTablas</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas.actualizar_tabla"><code class="docutils literal notranslate"><span class="pre">VistaABMCDeTablas.actualizar_tabla()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas.inicializar_vista"><code class="docutils literal notranslate"><span class="pre">VistaABMCDeTablas.inicializar_vista()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-vista">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">entregaIntermedia</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">vista package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/vista.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vista-package">
+<h1>vista package<a class="headerlink" href="#vista-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-vista.cls_boton">
+<span id="vista-cls-boton-module"></span><h2>vista.cls_boton module<a class="headerlink" href="#module-vista.cls_boton" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vista.cls_boton.Boton">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.cls_boton.</span></span><span class="sig-name descname"><span class="pre">Boton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texto</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_boton.html#Boton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_boton.Boton" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">OutlinedButton</span></code></p>
+<p>Clase que hereda de flet.OutlinedButton, pero simplifica
+los atributos que recibe el constructor en: texto, funcion</p>
+</dd></dl>
+
+</section>
+<section id="module-vista.cls_columna_grafica">
+<span id="vista-cls-columna-grafica-module"></span><h2>vista.cls_columna_grafica module<a class="headerlink" href="#module-vista.cls_columna_grafica" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vista.cls_columna_grafica.ColumnaGrafica">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.cls_columna_grafica.</span></span><span class="sig-name descname"><span class="pre">ColumnaGrafica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objetos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_columna_grafica.html#ColumnaGrafica"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_columna_grafica.ColumnaGrafica" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></p>
+<p>simplificado de ejemplo en
+<a class="reference external" href="https://flet.dev/docs/controls/column">https://flet.dev/docs/controls/column</a></p>
+<p>Clase que hereda de flet.Column.
+Su constructor recibe solamente objetos flet.</p>
+</dd></dl>
+
+</section>
+<section id="module-vista.cls_fila_grafica">
+<span id="vista-cls-fila-grafica-module"></span><h2>vista.cls_fila_grafica module<a class="headerlink" href="#module-vista.cls_fila_grafica" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vista.cls_fila_grafica.FilaGrafica">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.cls_fila_grafica.</span></span><span class="sig-name descname"><span class="pre">FilaGrafica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objetos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_fila_grafica.html#FilaGrafica"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_fila_grafica.FilaGrafica" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></p>
+<p>Encontré como generar una fila de contenedores acá
+<a class="reference external" href="https://flet.dev/docs/controls/container/">https://flet.dev/docs/controls/container/</a></p>
+<p>Clase que hereda de flet.Row y su constructor recibe
+objetos de flet.</p>
+<p><strong>Es una fila grafica, no es fila de tabla.</strong></p>
+</dd></dl>
+
+</section>
+<section id="module-vista.cls_generador_obj_flet">
+<span id="vista-cls-generador-obj-flet-module"></span><h2>vista.cls_generador_obj_flet module<a class="headerlink" href="#module-vista.cls_generador_obj_flet" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vista.cls_generador_obj_flet.GeneradorObjetosFlet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.cls_generador_obj_flet.</span></span><span class="sig-name descname"><span class="pre">GeneradorObjetosFlet</span></span><a class="reference internal" href="_modules/vista/cls_generador_obj_flet.html#GeneradorObjetosFlet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase para generar objetos flet. Anteriormente tenia funciones.
+Ahora tengo metodos estaticos pertenecientes a esta clase</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_alerta">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generar_alerta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texto</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_generador_obj_flet.html#GeneradorObjetosFlet.generar_alerta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_alerta" title="Link to this definition"></a></dt>
+<dd><p>copié código del repositorio oficial de flet
+<a class="reference external" href="https://github.com/flet-dev/examples/blob/main/python/apps/">https://github.com/flet-dev/examples/blob/main/python/apps/</a>
+controls-gallery/examples/dialogs/alertdialog/<a href="#id1"><span class="problematic" id="id2">01_basic_and_</span></a>
+modal_dialogs.py</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_filas_de_tabla">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generar_filas_de_tabla</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_generador_obj_flet.html#GeneradorObjetosFlet.generar_filas_de_tabla"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_filas_de_tabla" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_separador">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generar_separador</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">botones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tabla</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_generador_obj_flet.html#GeneradorObjetosFlet.generar_separador"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_separador" title="Link to this definition"></a></dt>
+<dd><p>copiado de repositorio oficial de flet
+<a class="reference external" href="https://github.com/flet-dev/examples/blob/main/python/apps/">https://github.com/flet-dev/examples/blob/main/python/apps/</a>
+controls-gallery/examples/layout/divider/02_draggable_divider.py</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_tabla">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generar_tabla</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnas_txt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filas_lista_txt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_generador_obj_flet.html#GeneradorObjetosFlet.generar_tabla"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_generador_obj_flet.GeneradorObjetosFlet.generar_tabla" title="Link to this definition"></a></dt>
+<dd><p>copiado de repositorio oficial de flet
+<a class="reference external" href="https://github.com/flet-dev/examples/blob/main/python/apps/">https://github.com/flet-dev/examples/blob/main/python/apps/</a>
+controls-gallery/examples/layout/datatable/01_basic_datatable.py
+lo hice dinamico para que reciba una lista de titulos de
+columnas y una lista de filas, donde cada fila es una lista
+de celdas</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vista.cls_vista_abmc_tabla">
+<span id="vista-cls-vista-abmc-tabla-module"></span><h2>vista.cls_vista_abmc_tabla module<a class="headerlink" href="#module-vista.cls_vista_abmc_tabla" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vista.cls_vista_abmc_tabla.VistaABMCDeTablas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.cls_vista_abmc_tabla.</span></span><span class="sig-name descname"><span class="pre">VistaABMCDeTablas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nombre_tabla</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_vista_abmc_tabla.html#VistaABMCDeTablas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<section id="atributos-de-instancia">
+<h3>Atributos de instancia<a class="headerlink" href="#atributos-de-instancia" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>page</strong>: página de Flet.</p></li>
+<li><p><strong>titulos_columnas</strong>: muestra qué representa cada columna.</p></li>
+<li><p><strong>datos</strong>: contiene la información a graficar en una tabla de
+Flet.</p></li>
+<li><p><strong>botones</strong>: fila de botones de Flet con funciones <strong>ABM</strong> que
+provienen del controlador (y este a su vez del modelo).</p></li>
+<li><p><strong>registro_modificable</strong>: utilizado para funciones de <strong>ABM</strong>.</p></li>
+<li><p><strong>tabla</strong>: la tabla a graficar con Flet y con los datos que
+provee el controlador.</p></li>
+<li><p><strong>separador</strong>: separa la parte superior (botones y registro
+modificable) de la parte inferior (tabla).</p></li>
+<li><p><strong>alerta_evento</strong>: alerta cuando se ejecuta una función <strong>ABM</strong> o
+cuando ocurre un error.</p></li>
+</ul>
+</section>
+<section id="metodos-de-instancia-publicos">
+<h3>Métodos de instancia públicos<a class="headerlink" href="#metodos-de-instancia-publicos" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>actualizar_tabla(self)</strong>: actualiza los datos de la tabla.</p></li>
+<li><p><strong>inicializar_vista(self, alta, baja, modificacion)</strong>: inicializa
+la vista asignando las funciones de <strong>ABM</strong>.</p></li>
+</ul>
+</section>
+<section id="metodos-de-instancia-privados">
+<h3>Métodos de instancia privados<a class="headerlink" href="#metodos-de-instancia-privados" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>__inicializar_botones(self)</strong>: inicializa los botones de la
+vista.</p></li>
+<li><p><strong>__inicializar_registro_modificable(self)</strong>: inicializa el
+registro modificable.</p></li>
+<li><p><strong>__inicializar_tabla(self)</strong>: inicializa la tabla de la vista.</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_vista_abmc_tabla.VistaABMCDeTablas.actualizar_tabla">
+<span class="sig-name descname"><span class="pre">actualizar_tabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_vista_abmc_tabla.html#VistaABMCDeTablas.actualizar_tabla"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas.actualizar_tabla" title="Link to this definition"></a></dt>
+<dd><p>Actualiza los datos en la tabla</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vista.cls_vista_abmc_tabla.VistaABMCDeTablas.inicializar_vista">
+<span class="sig-name descname"><span class="pre">inicializar_vista</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baja</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modificacion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vista/cls_vista_abmc_tabla.html#VistaABMCDeTablas.inicializar_vista"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vista.cls_vista_abmc_tabla.VistaABMCDeTablas.inicializar_vista" title="Link to this definition"></a></dt>
+<dd><p>Inicializo los distintos objetos flet que componen la vista</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-vista">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vista" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modelo.html" class="btn btn-neutral float-left" title="modelo package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Fede.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

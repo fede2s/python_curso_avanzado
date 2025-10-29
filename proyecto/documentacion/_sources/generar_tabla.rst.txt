@@ -1,0 +1,7 @@
+generar\_tabla module
+=====================
+
+.. automodule:: generar_tabla
+   :members:
+   :show-inheritance:
+   :undoc-members:

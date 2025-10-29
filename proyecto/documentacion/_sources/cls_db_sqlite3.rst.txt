@@ -1,0 +1,7 @@
+cls\_db\_sqlite3 module
+=======================
+
+.. automodule:: cls_db_sqlite3
+   :members:
+   :show-inheritance:
+   :undoc-members:
