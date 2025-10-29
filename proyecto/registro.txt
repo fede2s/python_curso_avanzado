@@ -1,0 +1,3 @@
+Registro con id=13 eliminado	13;;;;
+Registro con id=15 eliminado	15;;;;
+Registro agregado a base de datos	11;29/10/2025;6:00:00;5;2
