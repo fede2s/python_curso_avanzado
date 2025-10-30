@@ -4,11 +4,11 @@ from modelo.cls_db_sqlite3 import DbSqlite3
 import vista.cls_vista_abmc_tabla as vista_tab
 import modelo.cls_validador_clave as lib_regex_clave
 from modelo.cls_log_excepciones import RegistroLogError
-from decoradores.registrar_en_txt import registrar_en_txt
+from modelo.patron_observador import TemaBotonera, ObservadorBotoneraLog
 
 
 # controlador principal de la app
-class ControladorDeTablas:
+class ControladorDeTablas(TemaBotonera):
     """
     Tabla con datos:
 
@@ -55,6 +55,7 @@ class ControladorDeTablas:
         self.vista.page.controls.clear()
         self.inicializar()
         self.log = 'log_errores.txt'
+        self.observador_log_txt = ObservadorBotoneraLog(self)
 
     def inicializar(self):
         def alta(e):
@@ -82,7 +83,7 @@ class ControladorDeTablas:
                     'No se pudo insertar el registro'
                 alerta(e)
 
-        @registrar_en_txt
+        #@registrar_en_txt
         def alerta(e):
             e.control.page.overlay.append(self.vista.alerta_evento)
             self.vista.alerta_evento.open = True
@@ -92,7 +93,7 @@ class ControladorDeTablas:
             for campo in self.vista.registro_modificable.controls:
                 datos_txt += ';' + str(campo.value)
             datos_txt = datos_txt[1:]
-            return mensaje_txt + '\t' + datos_txt + '\n'
+            self.apretar_boton(mensaje_txt + '\t' + datos_txt + '\n')
 
         def baja(e):
             # selecciono la primera celda del registro
